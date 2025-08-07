@@ -2,6 +2,7 @@
 @import "tailwindcss";
 
 @theme {
+  --font-one: DM Sans;
   --color-Red-500: hsl(10, 79%, 65%);
   --color-Blue-300: hsl(186, 34%, 65%);
   --color-Brown-950: hsl(25, 47%, 15%);
