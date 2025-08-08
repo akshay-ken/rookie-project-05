@@ -1,3 +1,9 @@
+import { HeaderWithLogo } from "./HeaderWithLogo";
+
 export function MainPage() {
-  return <main></main>;
+  return (
+    <main>
+      <HeaderWithLogo />
+    </main>
+  );
 }
