@@ -3,7 +3,7 @@
 
 @layer base {
   body {
-    @apply bg-amber-800/20;
+    @apply bg-amber-800/20 font-one;
   }
 }
 
