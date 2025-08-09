@@ -1,8 +1,10 @@
+import { useState } from "react";
 import spendingData from "../assets/data.json";
 
 const total = spendingData.reduce((first, next) => first + next.amount, 0);
 
 export function ChartSection() {
+  const [showSpan, setShowSpan] = useState("");
   return (
     <section className="bg-white p-4 rounded-xl w-sm md:w-lg">
       <h2 className="text-2xl font-semibold text-Brown-950 mb-12">
@@ -13,12 +15,16 @@ export function ChartSection() {
           return (
             <>
               <div className="flex flex-col items-center">
-                <span className="bg-Brown-950 text-white mb-2 invisibl hover:bg-Red-500 p-1 rounded-sm font-semibold">
-                  ${dayData.amount}
-                </span>
+                {showSpan === dayData.day ? (
+                  <span className="bg-Brown-950 text-white mb-2 p-1 rounded-sm font-semibold">
+                    ${dayData.amount}
+                  </span>
+                ) : null}
+
                 <div
                   //   onMouseOver={} use state to manage this
-                  className={`basis-${dayData.amount} bg-Red-500  w-8 rounded-sm `}
+                  onClick={() => setShowSpan(dayData.day)}
+                  className={`basis-${dayData.amount} bg-Red-500  w-8 rounded-sm active:bg-Blue-300 focus:bg-Blue-300`}
                 ></div>
                 <p className="font-semibold text-Brown-400">{dayData.day}</p>
               </div>
